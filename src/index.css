@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FAF7F2;
+  --color-terracotta: #C1624F;
+  --color-terracotta-dark: #A8503E;
+  --color-olive: #6B7645;
+  --color-charcoal: #2C2C2C;
+  --color-charcoal-light: #5A5A5A;
+  --color-sand: #E8DFD0;
+  --color-sand-dark: #D0C4B0;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Prevent iOS auto-zoom on focus */
+input, textarea, select { font-size: 16px !important; }
+
+/* Prevent iOS Safari date input from overflowing its container */
+input[type="date"] { display: block; width: 100%; max-width: 100%; box-sizing: border-box; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-sand-dark); border-radius: 3px; }
