@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../lib/auth-context';
 
@@ -45,9 +45,19 @@ export default function Auth() {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center px-4"
+      className="min-h-screen flex items-center justify-center px-4 relative"
       style={{ backgroundColor: 'var(--color-cream)' }}
     >
+      <Link
+        to="/"
+        className="absolute top-6 left-6 flex items-center gap-2 text-sm transition-opacity hover:opacity-70"
+        style={{ color: 'var(--color-charcoal-light)' }}
+      >
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+        Back to home
+      </Link>
       <div className="w-full max-w-sm space-y-8">
         <div className="text-center space-y-2">
           <h1 className="font-serif text-4xl font-bold" style={{ color: 'var(--color-charcoal)' }}>
