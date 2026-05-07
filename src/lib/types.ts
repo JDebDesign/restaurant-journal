@@ -1,3 +1,14 @@
+export interface PlaceResult {
+  placeId: string;
+  name: string;
+  address: string;
+  lat?: number | null;
+  lng?: number | null;
+  phone?: string | null;
+  website?: string | null;
+  googleMapsUrl?: string | null;
+}
+
 export interface Restaurant {
   id: string;
   place_id: string;
