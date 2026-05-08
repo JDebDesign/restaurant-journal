@@ -1,10 +1,11 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../lib/auth-context';
 
 export function Navbar() {
   const { session } = useAuth();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   async function signOut() {
     await supabase.auth.signOut();
@@ -28,13 +29,15 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           {session && (
             <>
-              <Link
-                to="/new"
-                className="px-4 py-1.5 rounded-lg text-sm font-medium text-white transition-opacity hover:opacity-90"
-                style={{ backgroundColor: 'var(--color-terracotta)' }}
-              >
-                + New Entry
-              </Link>
+              {pathname !== '/new' && (
+                <Link
+                  to="/new"
+                  className="px-4 py-1.5 rounded-lg text-sm font-medium text-white transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: 'var(--color-terracotta)' }}
+                >
+                  + New Entry
+                </Link>
+              )}
               <button
                 onClick={signOut}
                 className="text-sm transition-colors"

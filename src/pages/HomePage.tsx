@@ -52,7 +52,7 @@ export default function HomePage() {
             Log In
           </button>
           <button
-            onClick={() => navigate('/auth')}
+            onClick={() => navigate('/auth?mode=signup')}
             className="hidden sm:flex items-center justify-center h-10 sm:h-12 px-4 sm:px-6 rounded-lg text-sm font-semibold text-white transition-opacity hover:opacity-80"
             style={{ backgroundColor: '#2d1b14' }}
           >
