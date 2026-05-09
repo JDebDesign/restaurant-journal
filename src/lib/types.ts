@@ -35,6 +35,7 @@ export interface JournalEntry {
   would_return: 'yes' | 'no' | 'maybe' | null;
   price_level: 1 | 2 | 3 | 4 | null;
   price_notes: string | null;
+  gif_url: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -68,4 +69,12 @@ export interface EntryFormValues {
   priceLevel: number | null;
   priceNotes: string;
   photos: File[];
+  gifUrl: string | null;
+}
+
+export interface GifResult {
+  id: string;
+  title: string;
+  previewUrl: string;
+  fullUrl: string;
 }

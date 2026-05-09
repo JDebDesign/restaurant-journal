@@ -140,6 +140,16 @@ export default function EntryDetailPage() {
         </div>
       )}
 
+      {/* GIF */}
+      {entry.gif_url && (
+        <img
+          src={entry.gif_url}
+          alt="Entry GIF"
+          className="w-full rounded-xl"
+          style={{ maxHeight: '240px', objectFit: 'cover' }}
+        />
+      )}
+
       {/* Details */}
       <div
         className="rounded-2xl border p-5 space-y-5"

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { StarRating } from './ui/StarRating';
 import { PriceLevel } from './ui/PriceLevel';
 import { PhotoUploader } from './ui/PhotoUploader';
+import { GifPicker } from './ui/GifPicker';
 import { getPublicUrl } from '../lib/storage';
 import type { EntryFormValues, EntryPhoto } from '../lib/types';
 
@@ -28,6 +29,7 @@ const defaultValues: EntryFormValues = {
   priceLevel: null,
   priceNotes: '',
   photos: [],
+  gifUrl: null,
 };
 
 const inputClass =
@@ -238,6 +240,12 @@ export function EntryForm({ onSubmit, initialValues, existingPhotos, onRemoveExi
           </div>
         )}
         <PhotoUploader files={values.photos} onChange={(f) => set('photos', f)} />
+      </div>
+
+      {/* GIF */}
+      <div>
+        <FieldLabel optional>GIF vibe</FieldLabel>
+        <GifPicker value={values.gifUrl} onChange={(url) => set('gifUrl', url)} />
       </div>
 
       {error && (

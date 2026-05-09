@@ -62,6 +62,7 @@ export default function EditEntry() {
     priceLevel: entry.price_level,
     priceNotes: entry.price_notes || '',
     photos: [],
+    gifUrl: entry.gif_url ?? null,
   };
 
   const currentPhotos = entry.photos.filter(

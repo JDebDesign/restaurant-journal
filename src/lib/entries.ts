@@ -44,6 +44,7 @@ export async function createEntry(userId: string, values: EntryFormValues): Prom
       would_return: values.wouldReturn,
       price_level: values.priceLevel,
       price_notes: values.priceNotes.trim() || null,
+      gif_url: values.gifUrl,
     })
     .select('id')
     .single();
@@ -121,6 +122,7 @@ export async function updateEntry(
       would_return: values.wouldReturn,
       price_level: values.priceLevel,
       price_notes: values.priceNotes.trim() || null,
+      gif_url: values.gifUrl,
     })
     .eq('id', entryId);
   if (entryError) throw entryError;
