@@ -87,10 +87,11 @@ export function GifPicker({ value, onChange }: GifPickerProps) {
                   key={gif.id}
                   type="button"
                   onClick={() => handleSelect(gif)}
-                  className="rounded-lg overflow-hidden aspect-square hover:opacity-80 transition-opacity focus:outline-none"
+                  className="relative rounded-lg overflow-hidden hover:opacity-80 transition-opacity focus:outline-none"
+                  style={{ paddingBottom: '100%' }}
                   title={gif.title}
                 >
-                  <img src={gif.previewUrl} alt={gif.title} className="w-full h-full object-cover" />
+                  <img src={gif.previewUrl} alt={gif.title} className="absolute inset-0 w-full h-full object-cover" />
                 </button>
               ))}
             </div>
